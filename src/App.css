@@ -1,0 +1,336 @@
+html, body {
+  height: 100%; /* Ensures the body takes up the full viewport height */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  position: relative; /* Needed for absolute positioning of overlay */
+  overflow: hidden; /* Change to auto if content needs to be scrollable */
+  background: #e0f7fa url('./pictures/background1.gif') no-repeat center center fixed;
+  background-size: cover; /* Ensures the background image covers the entire area */
+}
+
+
+/* Flexbox to center the form */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%/* Full viewport height to center vertically */
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.8);
+  min-width: 700px; /* Set a fixed width */
+  margin-top: 90px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+form input,
+form button{
+  margin: 10px 0;
+  padding: 12px;
+  width: 100%; /* Take up full width of the form */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+form select{
+  margin: 10px 0;
+  padding: 12px;
+  border: px solid #f5f5f5;
+  border-radius: 4px;
+  width: 103.7%;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+form button{
+  background-color: #4CAF50;
+  color: #f5f5f5;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 15px;
+  width: 50%;
+  border-radius: 15px;
+}
+
+form button:hover {
+  background-color: #45a049;
+}
+
+nav {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-btn {
+  background-color: #45a049;
+  color: #f5f5f5;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 15px;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+}
+
+.nav-btn:hover {
+  background-color: #3d8b41;
+  border-radius: 20px;
+}
+
+.nav-btn:focus {
+  outline: none;
+}
+
+.nav-btn.active {
+  background-color: #2c6e2b;
+}
+
+.inventory-message {
+  margin-top: 90px;
+  text-align: middle;
+}
+
+table {
+  width: 100%; /* Full width */
+  border-collapse: collapse; /* Collapse borders */
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for table */
+  border-radius: 8px; /* Rounded corners for table */
+  overflow: hidden; /* Prevents border-radius from affecting child elements */
+}
+
+table th,
+table td {
+  padding: 12px 15px; /* Padding for table cells */
+  text-align: center; /* Center align text */
+}
+
+table th {
+  background-color: #4CAF50; /* Use the green from the palette */
+  color: #f5f5f5; /* White text for headers */
+  font-size: 18px; /* Larger font size for headers */
+  text-transform: uppercase; /* Uppercase text for better readability */
+}
+
+table tr:nth-child(even) {
+  background-color: #f5f5f5;; /* Very light gray for even rows */
+}
+
+table tr:nth-child(odd) {
+  background-color: #ffffff; /* White for odd rows */
+}
+
+table tr:hover {
+  background-color: #f5f5f5;; /* Slightly darker on hover for rows */
+}
+
+table td {
+  color: #333; /* Dark text color for better contrast */
+  font-size: 16px; /* Font size for table data */
+}
+
+/* Additional Responsive Adjustments */
+@media (max-width: 768px) {
+  table {
+    font-size: 14px; /* Smaller font size for tables on small screens */
+  }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  form {
+    flex-direction: column; /* Stack form elements */
+  }
+
+  table {
+    font-size: 14px; /* Smaller font size for tables on small screens */
+  }
+}
+
+/* Modal Container */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* On top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show {
+  display: flex; /* Show modal */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #f5f5f5;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  text-align: center;
+  position: relative; /* For positioning the close button */
+  animation: fadeIn 0.3s ease-out; /* Smooth appear animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+}
+
+.close-button:hover {
+  color: #555;
+}
+
+.header {
+  background-color: #f5f5f5;
+  color: #111111; 
+  margin-top: 100px;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+.modal p{
+  color: #111111; 
+  font-size: 20px;
+}
+
+
+.inventory-message {
+  text-align: center;
+}
+
+.no-items-form {
+  border: 1px solid #ccc;
+  padding: 30px;
+  border-radius: 5px;
+  background-color: #f5f5f5;;
+  width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.no-items-form h3 {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #111111; 
+}
+
+.no-items-form p {
+  margin: 0;
+  font-size: 1em;
+  color: #505050;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  margin: 10px 0; /* Margin above and below the button group */
+  margin-bottom: 30px;
+}
+
+.filter-buttons button {
+  background-color: #4CAF50; /* Green background */
+  color: #f5f5f5; /* White text */
+  border: none; /* Remove default border */
+  border-radius: 15px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for the button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.filter-buttons button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.header {
+  background-color: transparent; /* Make background transparent for the header */
+  margin-top: 100px; /* Adjust top margin */
+  text-align: center;
+  
+}
+
+.header-card {
+  background-color: #f5f5f5; /* White background for the card */
+  padding: 20px; /* Padding around the header */
+  border-radius: 15px; /* Rounded corners for the card */
+  display: inline-block; /* Center card in header */
+  max-width: 80%; /* Limit the maximum width of the card */
+  margin: 0 auto; /* Center card horizontally */
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.8);
+  margin-bottom: -50px;
+}
+
+.header-card h1 {
+  margin: 0; /* Remove default margin */
+  color: #111111; /* Green color for header text */
+  font-size: 35px; /* Font size for the header */
+  font-weight: bold; /* Bold text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header-card {
+    width: 95%; /* Full width on smaller screens */
+    padding: 15px; /* Adjust padding for smaller screens */
+    
+  }
+
+  .header-card h1 {
+    font-size: 20px; /* Smaller font size for headers on small screens */
+    
+  }
+}
+
+.table-container3 h3{
+  font-size: 23px;
+  color: #111111;
+}
+
+.table-container3 p{
+  font-size: 22px;
+  color: #111111;
+}
+
